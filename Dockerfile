@@ -9,6 +9,6 @@ COPY Gemfile Gemfile.lock ./
 RUN gem install bundler --no-document
 RUN bundle install --no-binstubs --jobs $(nproc) --retry 3
 
-COPY . .
+ADD . /ruby-examples
 
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
