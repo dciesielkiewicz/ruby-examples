@@ -1,6 +1,7 @@
-FROM ruby:alpine
+FROM ruby:3.1.2
 
-RUN apk update && apk add bash build-base nodejs postgresql-dev tzdata
+RUN apt-get update && apt-get install -y nodejs postgresql-client
+# RUN apt-get update && apt-get install -y bash build-base nodejs postgresql-client tzdata
 
 RUN mkdir /ruby-examples
 WORKDIR /ruby-examples
